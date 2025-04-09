@@ -1,0 +1,52 @@
+[
+    {
+        "title": "Ryan's First Post",
+        "content": "I'm making a tech blog with handlebars!",
+        "user_id": 1
+    },
+    {
+        "title": "JK's First Post",
+        "content": "I'm making a react app",
+        "user_id": 2
+    },
+    {
+        "title": "Brian's First Post",
+        "content": "I'm learning python. Python is hard.",
+        "user_id": 3
+    },
+    {
+        "title": "Sandy's First Post",
+        "content": "I'm making a website for my photography business.",
+        "user_id": 4
+    },
+    {
+        "title": "John's First Post",
+        "content": "I'm looking for a job in the Miami-area. Specialize in MERN stack.",
+        "user_id": 5
+    },
+    {
+        "title": "Ryan's Second Post",
+        "content": "I'm making a DND social network site using AI image generation for your characters!",
+        "user_id": 1
+    },
+    {
+        "title": "John's Second Post",
+        "content": "I'm currently learning Vue.js. Why would i use this instead of React?",
+        "user_id": 5
+    },
+    {
+        "title": "John's Third Post",
+        "content": "Anyone familiar with Angular.js? How does it compare to React?",
+        "user_id": 5
+    },
+    {
+        "title": "Ryan's Third Post",
+        "content": "Does anyone use handlebars anymore? Seems rather outdated.",
+        "user_id": 1
+    },
+    {
+        "title": "Brian's Second Post",
+        "content": "Anyone familiar with Django? I'm trying to build a python-based back-end.",
+        "user_id": 3
+    }
+]

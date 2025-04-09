@@ -1,0 +1,42 @@
+[
+    {
+        "content": "Nice! React is awesome.",
+        "user_id": 1,
+        "post_id": 2
+    },
+    {
+        "content": "I like handlebars.",
+        "user_id": 2,
+        "post_id": 1
+    },
+    {
+        "content": "Handlebars is neat!",
+        "user_id": 3,
+        "post_id": 1
+    },
+    {
+        "content": "Python is cool.",
+        "user_id": 5,
+        "post_id": 3
+    },
+    {
+        "content": "Nice! What stack are you using?",
+        "user_id": 1,
+        "post_id": 4
+    },
+    {
+        "content": "That sounds really cool!",
+        "user_id": 5,
+        "post_id": 6
+    },
+    {
+        "content": "I love DND, that's an awesome idea!",
+        "user_id": 2,
+        "post_id": 6
+    },
+    {
+        "content": "They have some similarities, but I personally prefer React.",
+        "user_id": 2,
+        "post_id": 8
+    }
+]
