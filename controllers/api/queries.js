@@ -8,7 +8,7 @@ const queries = {
                 attributes: ['username']  // fields from Post to include
             }]
         }).catch((err) => {
-            res.json(err);
+            return err;
         });
         const posts = postData.map(post => post.get({ plain: true }));
         return posts;
@@ -19,7 +19,7 @@ const queries = {
                 id: id
             }
         }).catch((err) => {
-            res.json(err);
+            return err;
         });
         const posts = postData.map(post => post.get({ plain: true }));
         return posts;
@@ -30,13 +30,13 @@ const queries = {
                 model: Comment
             }]
         }).catch((err) => {
-            res.json(err);
+            return err;
         });
-        return post.get({ plain: true });
+        return postData.get({ plain: true });
     },
     createPost: async (postData) => {
         const post = await BlogPost.create(postData).catch((err) => {
-            res.json(err);
+            return err;
         });
         return post;
     },
@@ -46,7 +46,7 @@ const queries = {
                 id: id
             }
         }).catch((err) => {
-            res.json(err);
+            return err;
         })
         return post;
     },
@@ -56,7 +56,7 @@ const queries = {
                 id: id
             }
         }).catch((err) => {
-            res.json(err);
+            return err;
         });
         return post;
     },
@@ -66,13 +66,13 @@ const queries = {
                 username: username
             }
         }).catch((err) => {
-            res.json(err);
+            return err;
         });
         return userData;
     },
     createUser: async (userData) => {
         const user = await User.create(userData).catch((err) => {
-            res.json(err);
+            return err;
         });
         return user;
     }

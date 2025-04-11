@@ -16,9 +16,10 @@ router.get("/login", (req, res) => {
     res.render("login");
 })
 
-router.get("/post:id", async (req, res) => {
+router.get("/post/:id", async (req, res) => {
     const post = await queries.getPost(req.params.id);
-    res.render("post", {post, loggedIn: req.session.loggedIn});
+    const usersPost = req.session.user_id == req.params.id;
+    res.render("post", {post, loggedIn: req.session.loggedIn, usersPost: usersPost});
 })
 
 module.exports = router;

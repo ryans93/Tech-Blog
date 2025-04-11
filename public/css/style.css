@@ -1,0 +1,50 @@
+nav {
+    background-color: indigo;
+    color: white;
+    padding: 0px 10px 5px 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: right;
+}
+
+li {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+li a {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+.card {
+    border: #0000ff solid 5px;
+    flex-basis: 30%;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.card:hover {
+    border:red solid 5px;
+    cursor: pointer;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
