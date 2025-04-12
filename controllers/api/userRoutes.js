@@ -3,12 +3,13 @@ const queries = require("./queries")
 
 router.post("/login", async (req, res) => {
     try {
-        const user = queries.getUser(req.body.username);
+        console.log("in the login route")
+        const user = await queries.getUser(req.body.username);
         if (!user) {
             res.status(400).json({ message: 'Incorrect email, please try again' });
             return;
         }
-
+        //console.log(user)
         // Verify the posted password with the password store in the database
         const validPassword = await user.checkPassword(req.body.password);
 
@@ -20,11 +21,12 @@ router.post("/login", async (req, res) => {
         // Create session variables based on the logged in user
         req.session.save(() => {
             req.session.user_id = user.id;
-            req.session.logged_in = true;
-            res.redirect("/dashboard");
+            req.session.loggedIn = true;
+            res.status(200).json(user);
         });
     }
-    catch {
+    catch (err) {
+        console.log(err)
         res.status(400).json(err);
     }
 })
@@ -41,7 +43,7 @@ router.post("/signUp", async (req, res) => {
         req.session.save(() => {
             req.session.user_id = user.id;
             req.session.logged_in = true;
-            res.redirect("/dashboard");
+            res.status(200).json(user);
         });
     }
     catch (err) {
@@ -49,11 +51,11 @@ router.post("/signUp", async (req, res) => {
     }
 })
 
-router.post("/logout", (req, res) => {
-    if (req.session.logged_in) {
+router.get("/logout", (req, res) => {
+    if (req.session.loggedIn) {
         // Remove the session variables
         req.session.destroy(() => {
-            res.redirect("/homepage");
+            res.redirect("/");
         });
     } else {
         res.status(404).end();

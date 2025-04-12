@@ -10,19 +10,17 @@ const queries = {
         }).catch((err) => {
             return err;
         });
-        const posts = postData.map(post => post.get({ plain: true }));
-        return posts;
+        return postData;
     },
     getUserPosts: async (id) => {
         const postData = await BlogPost.findAll({
             where: {
-                id: id
+                user_id: id
             }
         }).catch((err) => {
             return err;
         });
-        const posts = postData.map(post => post.get({ plain: true }));
-        return posts;
+        return postData;
     },
     getPost: async (id) => {
         const postData = await BlogPost.findByPk(id, {
@@ -32,7 +30,7 @@ const queries = {
         }).catch((err) => {
             return err;
         });
-        return postData.get({ plain: true });
+        return postData;
     },
     createPost: async (postData) => {
         const post = await BlogPost.create(postData).catch((err) => {
