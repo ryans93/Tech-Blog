@@ -24,8 +24,17 @@ const queries = {
     },
     getPost: async (id) => {
         const postData = await BlogPost.findByPk(id, {
-            include: [{
-                model: Comment
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']  // fields from Post to include
+                },
+                {
+                model: Comment,
+                include: [{
+                    model: User,
+                    attributes: ['username']  // fields from Post to include
+                }]
             }]
         }).catch((err) => {
             return err;
@@ -37,6 +46,12 @@ const queries = {
             return err;
         });
         return post;
+    },
+    createComment: async (commentData) => {
+        const comment = await Comment.create(commentData).catch((err) => {
+            return err;
+        });
+        return comment;
     },
     upDatePost: async (id, postData) => {
         const post = await BlogPost.update(postData, {

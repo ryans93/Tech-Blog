@@ -1,5 +1,4 @@
 const form = document.querySelector("form");
-const signUp = document.querySelector("#signUp");
 
 form.addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -8,22 +7,16 @@ form.addEventListener("submit", async function (event) {
 
     if (username && password) {
         // Send a POST request to the API endpoint
-        const response = await fetch('/api/user/login', {
+        const response = await fetch('/api/user/signUp', {
           method: 'POST',
           body: JSON.stringify({ username, password }),
           headers: { 'Content-Type': 'application/json' },
         });
     
         if (response.ok) {
-          // If successful, redirect the browser to the profile page
           document.location.replace('/dashboard');
         } else {
           alert(response.status);
         }
       }
-})
-
-signUp.addEventListener("click", function (event) {
-  event.preventDefault();
-  window.location.replace("/signUp");
 })

@@ -27,7 +27,21 @@ router.get("/dashboard", withAuth, async (req, res) => {
 })
 
 router.get("/login", (req, res) => {
-    res.render("login");
+    if (!req.session.loggedIn){
+        res.render("login");
+    }
+    else {
+        res.redirect("/dashboard");
+    }
+})
+
+router.get("/signUp", (req, res) => {
+    if (!req.session.loggedIn){
+        res.render("signup");
+    }
+    else {
+        res.redirect("/dashboard");
+    }
 })
 
 router.get("/post/:id", async (req, res) => {
@@ -39,7 +53,8 @@ router.get("/post/:id", async (req, res) => {
     }
     const post = postData.get({ plain: true })
     console.log(req.session.loggedIn)
-    const usersPost = req.session.user_id == req.params.id;
+    console.log(post)
+    const usersPost = req.session.user_id == post.user_id;
     res.render("post", {post, loggedIn: req.session.loggedIn, usersPost: usersPost});
 })
 

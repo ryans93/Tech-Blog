@@ -1,16 +1,15 @@
 const form = document.querySelector("form");
-const signUp = document.querySelector("#signUp");
 
 form.addEventListener("submit", async function (event) {
     event.preventDefault();
-    const username = document.querySelector("#username").value;
-    const password = document.querySelector("#password").value;
+    const title = document.querySelector("#title").value;
+    const content = document.querySelector("#content").value;
 
-    if (username && password) {
+    if (title && content) {
         // Send a POST request to the API endpoint
-        const response = await fetch('/api/user/login', {
+        const response = await fetch('/api/post/', {
           method: 'POST',
-          body: JSON.stringify({ username, password }),
+          body: JSON.stringify({ title, content }),
           headers: { 'Content-Type': 'application/json' },
         });
     
@@ -21,9 +20,4 @@ form.addEventListener("submit", async function (event) {
           alert(response.status);
         }
       }
-})
-
-signUp.addEventListener("click", function (event) {
-  event.preventDefault();
-  window.location.replace("/signUp");
 })
