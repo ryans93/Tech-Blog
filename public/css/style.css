@@ -1,40 +1,70 @@
-nav {
-    background-color: indigo;
+body {
+    margin:0px 0px 0px 0px;
+    background-color: rgb(66, 65, 65);
+}
+
+header {
+    background-color: rgb(74, 7, 156);
     color: white;
-    padding: 0px 10px 5px 10px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+
+main {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+span {
+    background-color: rgb(66, 65, 65);
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 10px 10px black;
+}
+
+nav {
+    padding: 15px 10px 5px 0px;
 }
 
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: right;
+    display:flex;
+    flex-direction:row;
 }
 
 li {
     padding-bottom: 5px;
     padding-top: 5px;
+    font-weight: bold;
 }
 
 li a {
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    margin: 14px 16px;
     text-decoration: none;
 }
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #111;
+    color: red;
+    border-bottom: red solid 3px;
 }
 
 .card {
     border: #0000ff solid 5px;
-    flex-basis: 30%;
+    flex-basis: 90%;
     margin-top: 10px;
     padding-left: 10px;
+    background-color: beige;
 }
 
 .card:hover {
@@ -46,5 +76,33 @@ li a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    flex: 1;
+    justify-content: center;
+    gap: 1rem;
+    overflow-y: auto;
+    padding-top:1rem;
+    padding-bottom:1rem;
+}
+
+#formContainer{
+    flex: 1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: rgb(74, 7, 156);
+    padding: 8rem;
+    color:white;
+}
+
+label {
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom:10px;
+}
+
+input {
+    height: 2rem;
 }

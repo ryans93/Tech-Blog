@@ -51,7 +51,7 @@ if (commentForm) {
 
     commentForm.addEventListener("submit", async function (event) {
         event.preventDefault();
-        const content = document.querySelector("#content").value;
+        const content = document.querySelector("#comment").value;
         console.log(id)
         if (content) {
             // Send a POST request to the API endpoint

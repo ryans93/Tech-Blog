@@ -6,7 +6,8 @@ const queries = {
             include: [{
                 model: User,
                 attributes: ['username']  // fields from Post to include
-            }]
+            }],
+            order: [['date_created', 'ASC']]
         }).catch((err) => {
             return err;
         });
@@ -16,7 +17,8 @@ const queries = {
         const postData = await BlogPost.findAll({
             where: {
                 user_id: id
-            }
+            },
+            order: [['date_created', 'ASC']]
         }).catch((err) => {
             return err;
         });
@@ -34,8 +36,9 @@ const queries = {
                 include: [{
                     model: User,
                     attributes: ['username']  // fields from Post to include
-                }]
-            }]
+                }],
+            }],
+            order: [[Comment, 'date_created', 'ASC']]
         }).catch((err) => {
             return err;
         });
