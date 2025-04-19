@@ -1,10 +1,15 @@
+:root {
+    --dark-grey: rgb(66, 65, 65);
+    --indigo: rgb(74, 7, 156);
+}
+
 body {
-    margin:0px 0px 0px 0px;
-    background-color: rgb(66, 65, 65);
+    margin: 0px 0px 0px 0px;
+    background-color: var(--dark-grey);
 }
 
 header {
-    background-color: rgb(74, 7, 156);
+    background-color: var(--indigo);
     color: white;
     padding-left: 15px;
     padding-bottom: 10px;
@@ -22,7 +27,7 @@ h1 {
 }
 
 span {
-    background-color: rgb(66, 65, 65);
+    background-color: var(--dark-grey);
     padding: 10px;
     border-radius: 15px;
     box-shadow: 10px 10px black;
@@ -36,8 +41,8 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display:flex;
-    flex-direction:row;
+    display: flex;
+    flex-direction: row;
 }
 
 li {
@@ -63,12 +68,11 @@ li a:hover {
     border: #0000ff solid 5px;
     flex-basis: 90%;
     margin-top: 10px;
-    padding-left: 10px;
     background-color: beige;
 }
 
 .card:hover {
-    border:red solid 5px;
+    border: red solid 5px;
     cursor: pointer;
 }
 
@@ -80,29 +84,58 @@ li a:hover {
     justify-content: center;
     gap: 1rem;
     overflow-y: auto;
-    padding-top:1rem;
-    padding-bottom:1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
-#formContainer{
+.card-header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--indigo);
+    color: white;
+    padding-left: 10px;
+}
+
+p {
+    padding-left: 10px;
+}
+
+h5 {
+    padding-right: 1rem;
+}
+
+#formContainer {
     flex: 1;
-    display:flex;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-form {
-    background-color: rgb(74, 7, 156);
-    padding: 8rem;
+#formHeader {
+    width: calc(90% + 2rem);
+    background-color: var(--indigo);
+    margin-bottom: 0px;
+    padding: 1rem 0rem 1rem 2rem;
     color:white;
+}
+
+form {
+    background-color: beige;
+    color: black;
+    width: 90%;
+    padding: 1rem 2rem 2rem 2rem;
 }
 
 label {
     font-weight: bold;
     display: inline-block;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
 input {
     height: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
